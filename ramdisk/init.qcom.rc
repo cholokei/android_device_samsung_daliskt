@@ -282,16 +282,19 @@ on property:ro.baseband="msm"
     # setprop ro.qualcomm.bluetooth.dun true
 
 service qmiproxy /system/bin/qmiproxy
-    class late_start
+#    class late_start
+    class main
     user radio
     group radio
-    disabled
+#    disabled
 
+# QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
-    class late_start
+#    class late_start
+    class main
     user root
-    group radio
-    disabled
+    group radio audio bluetooth
+#    disabled
 
 service netmgrd /system/bin/netmgrd
     class late_start
