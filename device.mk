@@ -15,6 +15,11 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+## The gps config appropriate for this device
+PRODUCT_COPY_FILES += device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
+
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/dalikt/dalikt-vendor.mk)
 
@@ -28,14 +33,28 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    device/samsung/dalikt/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc
+    device/samsung/dalikt/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/dalikt/ramdisk/init.qcom.sh:root/init.qcom.sh \
+    device/samsung/dalikt/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc \
+    device/samsung/dalikt/ramdisk/ueventd.rc:root/ueventd.rc \
+    device/samsung/dalikt/ramdisk/init.emmc.rc:root/init.emmc.rc \
+    device/samsung/dalikt/fstab.qcom:root/fstab.qcom
+
+# Vold
+PRODUCT_COPY_FILES += \
+    device/samsung/dalikt/vold.fstab:system/etc/vold.fstab
 
 # BT firmware
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
 
-# Inherit from dali-common
-$(call inherit-product, device/samsung/dali-common/dali-common.mk)
+# common msm8660
+$(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/dalikt/dalikt-vendor.mk)
 
+#WIFI_BAND := 802_11_ABG
+#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)

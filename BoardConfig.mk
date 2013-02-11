@@ -27,8 +27,8 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-# inherit from common dali
--include device/samsung/dali-common/BoardConfigCommon.mk
+# inherit from common msm8660
+-include device/samsung/msm8660-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/dalikt/BoardConfigVendor.mk
@@ -39,8 +39,20 @@ TARGET_BOOTLOADER_BOARD_NAME := dalikt
 TARGET_OTA_ASSERT_DEVICE := SHV-E120K,dalikt
 
 # Kernel
+BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 loglevel=4
+BOARD_KERNEL_BASE           := 0x48000000
+BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_FORCE_RAMDISK_ADDRESS := 0x49500000
+
 TARGET_KERNEL_CONFIG        := cyanogenmod_dalikt_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 941621248
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2149580800
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Custom recovery font
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
@@ -54,4 +66,27 @@ TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
 # Override bootable/recovery/minui/graphics.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/dalikt/recovery/graphics.c
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Suppress the WIPE command since it can brick our EMMC
+BOARD_SUPPRESS_EMMC_WIPE := true
+
+# Workaround for glitches while cropping bypass layers
+# TODO (orphaned) TARGET_NO_BYPASS_CROPPING := true
+
+# MTP
+# TODO (orphaned) BOARD_MTP_DEVICE := "/dev/mtp_usb"
+
+# Audio
+# TODO (orphaned) TARGET_USES_QCOM_LPA := true
+COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
+# TODO (orphaned) BOARD_HAS_SAMSUNG_VOLUME_BUG := true
+
+# Disable initlogo, Samsungs framebuffer is weird
+TARGET_NO_INITLOGO := true
+
+# Preload the boot animation to avoid jerkiness
+TARGET_BOOTANIMATION_PRELOAD := true
+
 
