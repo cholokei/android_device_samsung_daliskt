@@ -15,8 +15,8 @@
 # the msm hw3d client device node is world writable/readable.
 /dev/msm_hw3dc            0666   root       root
 
-# the DIAG device node is not world writable/readable.
-/dev/diag                 0660   system     qcom_diag
+# the DIAG device node is world writable/readable.
+/dev/diag                 0666   root       root
 
 # the genlock client device node is world writable/readable.
 /dev/genlock              0666   root      root
@@ -110,6 +110,7 @@
 /dev/sdioctl6             0640   radio      radio
 /dev/sdioctl7             0640   radio      radio
 /dev/sdioctl8             0640   radio      radio
+/dev/sdio_tty_csvt_00     0666   root       system  # dali_q1_kt_vt ( 2012-02-25 )
 /dev/rmnet_mux_ctrl       0640   radio      radio
 /dev/hsicctl0             0640   radio      radio
 /dev/hsicctl1             0640   radio      radio
