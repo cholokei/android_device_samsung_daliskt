@@ -34,11 +34,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/dalikt/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/samsung/dalikt/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    device/samsung/dalikt/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/dalikt/ramdisk/ueventd.rc:root/ueventd.rc \
-    device/samsung/dalikt/ramdisk/init.emmc.rc:root/init.emmc.rc \
+    device/samsung/dalikt/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
     device/samsung/dalikt/fstab.qcom:root/fstab.qcom
 
 # Vold

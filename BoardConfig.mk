@@ -42,7 +42,8 @@ TARGET_OTA_ASSERT_DEVICE := SHV-E120K,dalikt
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom msm_watchdog.appsbark=0 msm_watchdog.enable=1 loglevel=4
 BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_PAGESIZE       := 2048
-BOARD_FORCE_RAMDISK_ADDRESS := 0x49500000
+BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01400000
+#BOARD_FORCE_RAMDISK_ADDRESS := 0x49500000
 
 TARGET_KERNEL_CONFIG        := cyanogenmod_dalikt_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
@@ -89,4 +90,4 @@ TARGET_NO_INITLOGO := true
 # Preload the boot animation to avoid jerkiness
 TARGET_BOOTANIMATION_PRELOAD := true
 
-
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/dalikt/bluetooth
