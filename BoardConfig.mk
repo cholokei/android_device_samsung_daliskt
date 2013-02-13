@@ -66,7 +66,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 #BOARD_TOUCH_RECOVERY := true
 
 # Override bootable/recovery/minui/graphics.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/dalikt/recovery/graphics.c
+#BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/dalikt/recovery/graphics.c
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
