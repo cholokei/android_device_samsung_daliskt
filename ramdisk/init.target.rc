@@ -399,12 +399,6 @@ on property:ro.baseband=svlte2a
    setprop ro.ril.svlte1x true
 
 on property:sys.radio.shutdown=true
-    exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
+   exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
    user root
    group root
-
-# TVout
-service TvoutService_C /system/bin/bintvoutservice
-     class main
-     user system
-     group graphics

@@ -90,4 +90,4 @@ TARGET_NO_INITLOGO := true
 # Preload the boot animation to avoid jerkiness
 TARGET_BOOTANIMATION_PRELOAD := true
 
-#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/dalikt/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/dalikt/bluetooth
