@@ -91,3 +91,6 @@ TARGET_NO_INITLOGO := true
 TARGET_BOOTANIMATION_PRELOAD := true
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/dalikt/bluetooth
+
+# Enable bcmdhd firmware
+WIFI_DRIVER_FW_BCMDHD := true
