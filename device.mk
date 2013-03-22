@@ -57,5 +57,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/dalikt/dalikt-vendor.mk)
 
+# Do not use common init.qcom.rc code
+NO_COMMON_INIT_QCOM_RC := true
+
 #WIFI_BAND := 802_11_ABG
 #$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
