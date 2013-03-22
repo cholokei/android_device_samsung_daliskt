@@ -43,7 +43,8 @@ PRODUCT_COPY_FILES += \
 
 # BT firmware
 PRODUCT_COPY_FILES += \
-    device/samsung/dalikt/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd
+    device/samsung/dalikt/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd \
+    device/samsung/dalikt/firmware/bcm4330B1.hcd:system/bin/bcm4330B1.hcd
 
 # keylayouts
 PRODUCT_COPY_FILES += \
