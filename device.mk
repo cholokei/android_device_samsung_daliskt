@@ -37,6 +37,9 @@ PRODUCT_COPY_FILES += \
     device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc \
     device/samsung/dalikt/fstab.qcom:root/fstab.qcom
 
+# Do not use common init.qcom.rc code
+NO_COMMON_INIT_QCOM_RC := true
+
 # Vold
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/vold.fstab:system/etc/vold.fstab
@@ -46,19 +49,9 @@ PRODUCT_COPY_FILES += \
     device/samsung/dalikt/firmware/bcm4330B1.hcd:system/etc/firmware/bcm4330B1.hcd \
     device/samsung/dalikt/firmware/bcm4330B1.hcd:system/bin/bcm4330B1.hcd
 
-# keylayouts
-PRODUCT_COPY_FILES += \
-    device/samsung/dalikt/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
-
 # common msm8660
 $(call inherit-product, device/samsung/msm8660-common/msm8660.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/dalikt/dalikt-vendor.mk)
-
-# Do not use common init.qcom.rc code
-NO_COMMON_INIT_QCOM_RC := true
-
-#WIFI_BAND := 802_11_ABG
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
