@@ -1,6 +1,6 @@
 #
 # system.prop for SHV-E120K
-# by Cholokei (Green) - leesl0416@naver.com
+# by Cholokei - leesl0416@naver.com
 #
 
 rild.libpath=/system/lib/libril-qc-qmi-1.so
@@ -24,12 +24,8 @@ media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=false
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
-#media.stagefright.enable-scan=true
 
 #ro.vendor.extension_library=/system/lib/libqc-opt.so
-
-lpa.decode=true
-lpa.use-stagefright=true
 
 #
 # system props for the data modules
@@ -56,26 +52,6 @@ persist.audio.vr.enable=false
 ro.opengles.version=131072
 
 #
-# system prop for Bluetooth Auto connect for remote initated connections
-#
-#ro.bluetooth.remote.autoconnect=true
-
-#
-# system prop for Bluetooth FTP profile
-#
-#ro.qualcomm.bluetooth.ftp=true
-#
-# system prop for requesting Master role in incoming Bluetooth connection.
-#
-#ro.bluetooth.request.master=true
-# system property for Bluetooth discoverability time out in seconds
-# 0: Always discoverable
-#debug.bt.discoverable_time=0
-
-# System property for cabl
-#ro.qualcomm.cabl=1
-
-#
 # System prop for sending transmit power request to RIL during WiFi hotspot on/off
 #
 ro.ril.transmitpower=true
@@ -85,9 +61,6 @@ ro.ril.transmitpower=true
 #      D/PHONE: mDoesRilSendMultipleCallRing=false
 #
 ro.telephony.call_ring.multiple=0
-
-# For 720x1280 panel
-ro.sf.lcd_density=320
 
 # Fields for custom RIL
 # MAX PROP NAME is 31 chars --|
@@ -106,44 +79,3 @@ persist.radio.add_power_save=1
 # System proverty snapshot disable
 persist.radio.snapshot_disabled=1
 
-# notify vold we have internal and external sd
-#ro.additionalmounts=/mnt/external_sd
-#ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
-
-# Qualcomm display settings
-#debug.qctwa.statusbar=1 
-#debug.qctwa.preservebuf=1 
-#debug.qc.hardware=true
-#com.qc.hardware=true
-#ro.hdmi.enable=true
-
-#
-# Improve touch responsiveness through Hardware Rendering
-#
-#debug.sf.hw=1
-#persist.sys.ui.hw=1
-#debug.performance.tuning=1
-#video.accelerate.hw=1
-#debug.egl.profiler=1
-#debug.egl.hw=1
-#debug.composition.type=gpu
-#debug.mdpcomp.logs=0
-#persist.sys.composition.type=gpu
-#ro.sf.compbypass.enable=1
-#dev.pm.dyn_samplingrate=1
-#debug.overlayui.enable=1
-#debug.enabletr=true
-
-# Improve Voice Call clarity
-#ro.ril.enable.amr.wideband=1
-
-# Increase Voice Call Audio Adjustment Steps.
-#ro.config.vc_call_steps=20
-
-# Disable strict mode
-persist.sys.strictmode.visual=0
-persist.sys.strictmode.disable=1
-
-# Trying to fix Wi-Fi
-wifi.interface=wlan0
-wifi.supplicant_scan_interval=15
