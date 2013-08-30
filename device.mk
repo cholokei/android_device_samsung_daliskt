@@ -34,8 +34,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/ramdisk/init.qcom.rc:root/init.qcom.rc \
     device/samsung/dalikt/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc \
-    device/samsung/dalikt/fstab.qcom:root/fstab.qcom
+    device/samsung/dalikt/ramdisk/init.target.rc:root/init.target.rc
 
 # Do not use common init.qcom.rc code
 NO_COMMON_INIT_QCOM_RC := true
@@ -43,10 +42,6 @@ NO_COMMON_INIT_QCOM_RC := true
 # Density property for 720x1280 HD panel
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
-
-# Vold
-PRODUCT_COPY_FILES += \
-    device/samsung/dalikt/vold.fstab:system/etc/vold.fstab
 
 # BT firmware
 PRODUCT_COPY_FILES += \
