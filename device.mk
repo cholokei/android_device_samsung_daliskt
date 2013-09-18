@@ -30,6 +30,9 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/dalikt/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Bootanimation
+PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/720.zip
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/samsung/dalikt/ramdisk/init.qcom.rc:root/init.qcom.rc \
