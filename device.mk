@@ -31,7 +31,8 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Bootanimation
-PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/720.zip
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1280
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
