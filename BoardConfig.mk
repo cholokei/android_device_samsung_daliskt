@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2012-2014 The CyanogenMod Project
 # by Cholokei - leesl0416@naver.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
