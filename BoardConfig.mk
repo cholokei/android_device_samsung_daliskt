@@ -31,12 +31,12 @@ USE_CAMERA_STUB := true
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/samsung/dalikt/BoardConfigVendor.mk
+-include vendor/samsung/daliskt/BoardConfigVendor.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := SHV-E120K,dalikt
+TARGET_OTA_ASSERT_DEVICE := SHV-E120S,daliskt
 
 # Kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true zcache
@@ -44,7 +44,7 @@ BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_PAGESIZE       := 2048
 BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01400000
 
-TARGET_KERNEL_CONFIG        := cyanogenmod_dalikt_defconfig
+TARGET_KERNEL_CONFIG        := cyanogenmod_daliskt_defconfig
 TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -75,5 +75,5 @@ TARGET_NO_INITLOGO := true
 # Preload the boot animation to avoid jerkiness
 TARGET_BOOTANIMATION_PRELOAD := true
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/dalikt/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/daliskt/bluetooth
 
